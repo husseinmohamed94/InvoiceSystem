@@ -62,7 +62,7 @@
         </div>
     @endif
     @if(session()->has('delete'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>{{session()->get('delete')}}</strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="close">
                 <span aria-hidden="true">&times;</span>
@@ -96,14 +96,28 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $i=0 ?>
+                            @foreach($products as $product)
+                                <?php $i++ ?>
                             <tr>
-                                <td>1 </td>
-                                <td>262620</td>
-                                <td>2020-2-9</td>
-                                <td>2020-10-5</td>
-                                <td>لم يتم السسدد ال الان</td>
-                            </tr>
+                                <td>{{ $i}}</td>
+                                <td>{{$product->product_name}}</td>
+                                <td>{{$product->section->section_name}}</td>
+                                <td>{{$product->description}}</td>
+                                <td>
+                                    <button class="modal-effect btn btn btn-outline-success  btn-sm " data-effect="effect-scale"
+                                       data-pro_id="{{ $product->id }}" data-product_name="{{ $product->product_name }}"
+                                            data-section_name="{{ $product->section->section_name }}"
+                                       data-description="{{ $product->description }}" data-toggle="modal" href="#edit_proudct"
+                                            title="تعديل"><i class="las la-pen"></i></button>
 
+                                    <button class="modal-effect btn btn-sm btn-outline-danger" data-effect="effect-scale"
+                                       data-pro_id="{{ $product->id }}" data-product_name="{{ $product->product_name }}" data-toggle="modal"
+                                            href="#delete_proudct" title="حذف"><i class="las la-trash"></i></button>
+
+                                </td>
+                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -149,6 +163,76 @@
         </div>
         <!-- End Basic modal -->
 
+        <!-- edit -->
+        <div class="modal fade" id="edit_proudct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">تعديل القسم</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="/products/update" method="post" autocomplete="off">
+                            {{method_field('patch')}}
+                            {{csrf_field()}}
+                            <div class="form-group">
+                                <input type="hidden" name="id" id="id" value="">
+                                <label for="recipient-name" class="col-form-label">اسم المنتج:</label>
+                                <input class="form-control" name="pro_id" id="pro_id" type="hidden">
+                                <input class="form-control" name="product_name" id="product_name" type="text">
+                            </div>
+
+
+                            <label class="my-1 mr-2" for="inline">القسم</label>
+                            <select name="section_name" id="section_name" class="form-control" required>
+                                @foreach($sections as $section)
+                                    <option>{{$section->section_name}}</option>
+                                @endforeach
+                            </select>
+
+
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">ملاحظات:</label>
+                                <textarea class="form-control" id="description" name="description"></textarea>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">تاكيد</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- delete -->
+        <div class="modal" id="delete_proudct">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content modal-content-demo">
+                    <div class="modal-header">
+                        <h6 class="modal-title">حذف القسم</h6><button aria-label="Close" class="close" data-dismiss="modal"
+                                                                      type="button"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <form action="products/destroy" method="post">
+                        {{method_field('delete')}}
+                        {{csrf_field()}}
+                        <div class="modal-body">
+                            <p>هل انت متاكد من عملية الحذف ؟</p><br>
+                            <input type="hidden" name="pro_id" id="pro_id" value="">
+                            <input class="form-control" name="product_name" id="product_name" type="text" readonly>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
+                            <button type="submit" class="btn btn-danger">تاكيد</button>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+
     </div>
     <!-- row closed -->
     </div>
@@ -177,5 +261,28 @@
     <!--Internal  Datatable js -->
     <script src="{{URL::asset('assets/js/table-data.js')}}"></script>
     <script src="{{URL::asset('assets/plugins/prism/prism.js')}}"></script>
-
+    <script>
+        $('#edit_proudct').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var pro_id = button.data('pro_id')
+            var product_name = button.data('product_name')
+            var section_name = button.data('section_name')
+            var description = button.data('description')
+            var modal = $(this)
+            modal.find('.modal-body #pro_id').val(pro_id);
+            modal.find('.modal-body #product_name').val(product_name);
+            modal.find('.modal-body #section_name').val(section_name);
+            modal.find('.modal-body #description').val(description);
+        })
+    </script>
+    <script>
+        $('#delete_proudct').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var pro_id = button.data('pro_id')
+            var product_name = button.data('product_name')
+            var modal = $(this)
+            modal.find('.modal-body #pro_id').val(pro_id);
+            modal.find('.modal-body #product_name').val(product_name);
+        })
+    </script>
 @endsection

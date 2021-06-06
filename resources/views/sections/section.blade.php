@@ -154,6 +154,7 @@
                         </div>
                     </div>
                     <!-- End Basic modal -->
+
 				</div>
     <!-- edit -->
     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
