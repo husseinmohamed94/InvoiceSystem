@@ -79,7 +79,9 @@
                     <div class="d-flex justify-content-between">
 
                         <div class="col-sm-6 col-md-3">
+                            @can('اضافة منتج')
                             <button class="btn btn-primary btn-block" data-effect="effect-scale" data-toggle="modal" href="#modaldemo8">اضافة منتيج</button>
+                            @endcan
                         </div>
                         </div>
                 </div>
@@ -105,16 +107,18 @@
                                 <td>{{$product->section->section_name}}</td>
                                 <td>{{$product->description}}</td>
                                 <td>
+                                    @can('تعديل منتج')
                                     <button class="modal-effect btn btn btn-outline-success  btn-sm " data-effect="effect-scale"
                                        data-pro_id="{{ $product->id }}" data-product_name="{{ $product->product_name }}"
                                             data-section_name="{{ $product->section->section_name }}"
                                        data-description="{{ $product->description }}" data-toggle="modal" href="#edit_proudct"
                                             title="تعديل"><i class="las la-pen"></i></button>
-
+                                    @endcan
+                                    @can('حذف منتج')
                                     <button class="modal-effect btn btn-sm btn-outline-danger" data-effect="effect-scale"
                                        data-pro_id="{{ $product->id }}" data-product_name="{{ $product->product_name }}" data-toggle="modal"
                                             href="#delete_proudct" title="حذف"><i class="las la-trash"></i></button>
-
+                                        @endcan
                                 </td>
                             </tr>
                             @endforeach
