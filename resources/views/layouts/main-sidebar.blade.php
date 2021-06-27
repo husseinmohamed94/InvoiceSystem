@@ -11,7 +11,7 @@
 				<div class="app-sidebar__user clearfix">
 					<div class="dropdown user-pro-body">
 						<div class="">
-							<img alt="user-img" class="avatar avatar-xl brround" src="{{URL::asset('assets/img/faces/6.jpg')}}"><span class="avatar-status profile-status bg-green"></span>
+							<img alt="user-img" class="avatar avatar-xl brround" src="{{URL::asset('assets/img/faces/6.png')}}"><span class="avatar-status profile-status bg-green"></span>
 						</div>
 						<div class="user-info">
 							<h4 class="font-weight-semibold mt-3 mb-0">{{Auth::user()->name}}</h4>
@@ -59,7 +59,7 @@
 							<li><a class="slide-item" href="{{ url('/' . $page='invoices_report') }}">تقرير الفواتير</a></li>
                             @endcan
                                 @can('تقرير العملاء')
-                                <li><a class="slide-item" href="{{ url('/' . $page='darggablecards') }}">تقرير العملاء</a></li>
+                                <li><a class="slide-item" href="{{ url('/' . $page='customers_report') }}">تقرير العملاء</a></li>
                                 @endcan
 						</ul>
 					</li>
