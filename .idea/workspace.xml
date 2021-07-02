@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5e10e4f7-e2cd-435d-9ec9-7c6763909a65" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main-header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +204,7 @@
       <workItem from="1624907983856" duration="4864000" />
       <workItem from="1625082080768" duration="6253000" />
       <workItem from="1625167814802" duration="5099000" />
-      <workItem from="1625253711463" duration="2839000" />
+      <workItem from="1625253711463" duration="3580000" />
     </task>
     <servers />
   </component>
@@ -250,11 +245,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/table-data.blade.php</url>
-          <line>1904</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://E:/invoices/#08 Update &amp; Delete Table Sections/ملف الاكواد/sections.blade.php</url>
           <line>150</line>
           <option name="timeStamp" value="4" />
@@ -268,11 +258,6 @@
           <url>file://$PROJECT_DIR$/resources/views/invoices/invoices_details.blade.php</url>
           <line>157</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/notification.blade.php</url>
-          <line>4</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/database/migrations/2021_06_17_220201_create_permission_tables.php</url>
