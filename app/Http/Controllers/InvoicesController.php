@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\InvoicesExport;
+use App\Notifications\Add_invoice_new;
 use Illuminate\Support\Facades\Notification;
 use App\invoice_attachments;
 use App\invoices;
@@ -107,6 +108,15 @@ class InvoicesController extends Controller
 
     //    $user = User::first();
        //  Notification::send($user, new AddInvoice($invoice_id));
+        $user = User::get();
+
+        $invoices = invoices::latest()->first();
+
+      //  $user->notify(new Add_invoice_new($invoices));
+         Notification::send($user, new Add_invoice_new($invoices));
+
+
+
         session()->flash('Add');
         return back();
     }
@@ -289,5 +299,14 @@ class InvoicesController extends Controller
         return Excel::download(new InvoicesExport, 'invoices.xlsx');
     }
 
+
+    public function MarkAsRead_all(Request $request){
+        $userUnreadNotifcation = auth()->user()->unreadNotifications;
+
+        if ($userUnreadNotifcation){
+            $userUnreadNotifcation->markAsRead();
+            return back();
+        }
+    }
 
 }

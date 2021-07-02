@@ -70,6 +70,7 @@ Route::get('customers_report', 'Customers_Report@index')->name('customers_report
 Route::post('Search_customers', 'Customers_Report@Search_customers');
 
 
+Route::get('MarkAsRead_all', 'InvoicesController@MarkAsRead_all')->name('MarkAsRead_all');
 
 
 

@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e10e4f7-e2cd-435d-9ec9-7c6763909a65" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Invoices.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Invoices.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/InvoicesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reports/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main-header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main-header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +205,11 @@
       <workItem from="1624742504592" duration="430000" />
       <workItem from="1624743216384" duration="6273000" />
       <workItem from="1624801538840" duration="8762000" />
-      <workItem from="1624813310113" duration="7822000" />
+      <workItem from="1624813310113" duration="8652000" />
+      <workItem from="1624907983856" duration="4864000" />
+      <workItem from="1625082080768" duration="6253000" />
+      <workItem from="1625167814802" duration="5099000" />
+      <workItem from="1625253711463" duration="2839000" />
     </task>
     <servers />
   </component>
@@ -242,10 +241,10 @@
       <screen x="0" y="0" width="1360" height="728" />
     </state>
     <state x="336" y="164" key="run.anything.popup/0.0.1360.728@0.0.1360.728" timestamp="1624394157769" />
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1624821161578">
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1625173467803">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1624821161578" />
+    <state x="343" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1625173467803" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
